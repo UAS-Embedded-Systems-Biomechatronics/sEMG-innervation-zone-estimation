@@ -1,0 +1,36 @@
+[build-system]
+requires = ["maturin>=1.3,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "sEMG_innervation_zone_estimation"
+version = "0.1.0"
+license = {file = "LICENSE.txt"}
+authors = [
+  {name = "Malte Mechtenberg"}
+]
+maintainers = [
+  {name = "Malte Mechtenberg", email = "malte.mechtenberg@hsbi.de"}
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+#dynamic = ["version"]
+dependencies = [ 
+  "numpy >= 1.23", 
+  "scipy >= 1.9", 
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "toml"
+]
+
+[tool.maturin]
+python-source = "pysrc/"
+module-name = "semg_iz_estimation._lib"
+features = ["pyo3/extension-module"]

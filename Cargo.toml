@@ -1,0 +1,13 @@
+[package]
+name = "sEMG_innervation_zone_estimation_pyo3"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "iz_estimation_pyo3"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = "0.19.0"
+sEMG_innervation_zone_estimation = {version = "0.1.0", path="sEMG_innervation_zone_estimation"}
